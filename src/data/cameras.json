@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Camera Cổng Chính",
+    "status": "online",
+    "location": "Tầng 1 - Lối vào",
+    "zone": "Ngoài trời"
+  },
+  {
+    "id": 2,
+    "name": "Camera Hành Lang A",
+    "status": "offline",
+    "location": "Tầng 2 - Khu A",
+    "zone": "Trong nhà"
+  },
+  {
+    "id": 3,
+    "name": "Camera Bãi Xe",
+    "status": "online",
+    "location": "Tầng hầm",
+    "zone": "Ngoài trời"
+  },
+  {
+    "id": 4,
+    "name": "Camera Phòng Server",
+    "status": "online",
+    "location": "Tầng 3 - Phòng kỹ thuật",
+    "zone": "Trong nhà"
+  },
+  {
+    "id": 5,
+    "name": "Camera Cầu Thang",
+    "status": "offline",
+    "location": "Khu A - Tầng 1-4",
+    "zone": "Trong nhà"
+  },
+  {
+    "id": 6,
+    "name": "Camera Sảnh Chính",
+    "status": "online",
+    "location": "Tầng 1 - Lối vào",
+    "zone": "Trong nhà"
+  },
+  {
+    "id": 7,
+    "name": "Camera Mái",
+    "status": "online",
+    "location": "Tầng thượng",
+    "zone": "Ngoài trời"
+  },
+  {
+    "id": 8,
+    "name": "Camera Kho",
+    "status": "offline",
+    "location": "Tầng B1",
+    "zone": "Trong nhà"
+  }
+]
