@@ -4,14 +4,58 @@
     "name": "Camera Cổng Chính",
     "status": "online",
     "location": "Tầng 1 - Lối vào",
-    "zone": "Ngoài trời"
+    "zone": "Ngoài trời",
+    "uptime": "99.2%",
+    "events": [
+      {
+        "id": 1,
+        "time": "08:31",
+        "type": "Phát hiện người",
+        "level": "warning"
+      },
+      { "id": 2, "time": "07:55", "type": "Chuyển động", "level": "info" },
+      {
+        "id": 3,
+        "time": "07:20",
+        "type": "Phát hiện người",
+        "level": "warning"
+      },
+      {
+        "id": 4,
+        "time": "06:48",
+        "type": "Không có sự kiện",
+        "level": "normal"
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Camera Hành Lang A",
     "status": "offline",
     "location": "Tầng 2 - Khu A",
-    "zone": "Trong nhà"
+    "zone": "Trong nhà",
+    "uptime": "85.2%",
+    "events": [
+      {
+        "id": 1,
+        "time": "08:31",
+        "type": "Phát hiện người",
+        "level": "warning"
+      },
+      { "id": 2, "time": "07:55", "type": "Chuyển động", "level": "info" },
+      {
+        "id": 3,
+        "time": "07:20",
+        "type": "Phát hiện người",
+        "level": "warning"
+      },
+      {
+        "id": 4,
+        "time": "06:48",
+        "type": "Không có sự kiện",
+        "level": "normal"
+      }
+    ]
   },
   {
     "id": 3,

@@ -1,10 +1,12 @@
 import { useState } from "react";
-import Header from "./componnents/Header";
-import Sidebar from "./componnents/Sidebar";
-import MainContent from "./componnents/MainContent";
+import { Routes, Route, Navigate } from "react-router-dom"; // Import công cụ Route
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import CameraList from "./components/CameraList"; // File MainContent cũ đổi tên thành CameraList
+import CameraDetail from "./components/CameraDetail"; // File mới chuẩn bị tạo
 
 function App() {
-  const [activeMenu, setActiveMenu] = useState("Tổng quan");
+  const [activeMenu, setActiveMenu] = useState("Camera");
 
   return (
     <div
@@ -15,10 +17,8 @@ function App() {
         overflow: "hidden",
       }}
     >
-      {/* 1. Sidebar bên trái:cao 100% màn hình */}
       <Sidebar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
 
-      {/* 2. Vùng bên phải: Xếp theo chiều dọc (Header trên, Content dưới) */}
       <div
         style={{
           display: "flex",
@@ -27,15 +27,20 @@ function App() {
           overflow: "hidden",
         }}
       >
-        {/* Header nằm trong vùng bên phải này */}
         <Header activePage={activeMenu} />
 
-        {/* Nội dung chính nằm dưới Header */}
         <div style={{ flex: 1, overflowY: "auto", backgroundColor: "#f0f2f5" }}>
-          <MainContent />
+          {/* Thay vì gọi cứng <MainContent />, ta dùng Routes để điều hướng */}
+          <Routes>
+            {/* Tự động chuyển hướng từ trang chủ vào /cameras */}
+            <Route path="/" element={<Navigate to="/cameras" replace />} />
+            <Route path="/cameras" element={<CameraList />} />
+            <Route path="/cameras/:id" element={<CameraDetail />} />
+          </Routes>
         </div>
       </div>
     </div>
   );
 }
+
 export default App;
