@@ -1,0 +1,55 @@
+{
+  "stats": {
+    "totalCameras": 14,
+    "onlineCameras": 12,
+    "offlineCameras": 2,
+    "eventsToday": 47,
+    "alertsUnread": 3
+  },
+  "weeklyEvents": [
+    { "day": "T2", "count": 38 },
+    { "day": "T3", "count": 52 },
+    { "day": "T4", "count": 31 },
+    { "day": "T5", "count": 47 },
+    { "day": "T6", "count": 63 },
+    { "day": "T7", "count": 29 },
+    { "day": "CN", "count": 44 }
+  ],
+  "recentEvents": [
+    {
+      "id": 1,
+      "time": "08:31",
+      "camera": "Camera Cổng Chính",
+      "type": "Phát hiện người",
+      "level": "warning"
+    },
+    {
+      "id": 2,
+      "time": "08:15",
+      "camera": "Camera Bãi Xe",
+      "type": "Chuyển động",
+      "level": "info"
+    },
+    {
+      "id": 3,
+      "time": "07:55",
+      "camera": "Camera Sảnh Chính",
+      "type": "Phát hiện người",
+      "level": "warning"
+    },
+    {
+      "id": 4,
+      "time": "07:20",
+      "camera": "Camera Hành Lang A",
+      "type": "Chuyển động",
+      "level": "info"
+    },
+    {
+      "id": 5,
+      "time": "06:48",
+      "camera": "Camera Cầu Thang",
+      "type": "Phát hiện người",
+      "level": "warning"
+    }
+  ]
+}

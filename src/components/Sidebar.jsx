@@ -1,26 +1,28 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar({ activeMenu, setActiveMenu }) {
+  const navigate = useNavigate();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  // Mình đổi icon thành các hình học cơ bản
+  // Thêm thuộc tính 'path' vào mỗi item để biết nút nào sẽ chuyển sang link nào
   const menuItems = [
-    { name: "Tổng quan", icon: "■" },
-    { name: "Camera", icon: "◈" },
-    { name: "Sự kiện", icon: "●" },
-    { name: "Cảnh báo", icon: "▲" },
-    { name: "Cài đặt", icon: "⚙" },
+    { name: "Tổng quan", icon: "■", path: "/" },
+    { name: "Camera", icon: "◈", path: "/cameras" },
+    { name: "Sự kiện", icon: "●", path: "/events" }, // Các trang này nếu chưa có component sẽ hiện trắng hoặc báo lỗi 404 tùy cấu hình, bạn có thể tạo sau
+    { name: "Cảnh báo", icon: "▲", path: "/alerts" },
+    { name: "Cài đặt", icon: "⚙", path: "/settings" },
   ];
 
-  // Bảng màu chuẩn trích xuất 
+  // Bảng màu chuẩn trích xuất
   const colors = {
-    sidebarBg: "#2a3042", // Màu nền tổng thể của Sidebar
-    brandBg: "#222736", // Màu nền đậm hơn của ô SENTINEL
-    brandText: "#556ee6", // Chữ SENTINEL màu xanh sáng
-    activeBg: "#32394e", // Màu nền khi menu được chọn
-    activeBorder: "#556ee6", // Vạch dọc màu xanh bên trái
-    textNormal: "#a6b0cf", // Chữ màu xám cho menu chưa chọn
-    textActive: "#ffffff", // Chữ màu trắng cho menu đang chọn
+    sidebarBg: "#2a3042",
+    brandBg: "#222736",
+    brandText: "#556ee6",
+    activeBg: "#32394e",
+    activeBorder: "#556ee6",
+    textNormal: "#a6b0cf",
+    textActive: "#ffffff",
   };
 
   return (
@@ -32,7 +34,7 @@ function Sidebar({ activeMenu, setActiveMenu }) {
         display: "flex",
         flexDirection: "column",
         transition: "width 0.3s ease",
-        padding: 0, // Ép padding về 0 để mọi thứ tràn ra sát mép
+        padding: 0,
         overflow: "hidden",
       }}
     >
@@ -46,7 +48,7 @@ function Sidebar({ activeMenu, setActiveMenu }) {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: isCollapsed ? "center" : "flex-start",
-          boxSizing: "border-box", // Đảm bảo padding không làm phình khối này
+          boxSizing: "border-box",
         }}
       >
         <span
@@ -79,16 +81,18 @@ function Sidebar({ activeMenu, setActiveMenu }) {
           return (
             <div
               key={item.name}
-              onClick={() => setActiveMenu(item.name)}
+              onClick={() => {
+                // KHI CLICK: Vừa đổi màu menu đang chọn, vừa chuyển đường dẫn URL
+                setActiveMenu(item.name);
+                navigate(item.path);
+              }}
               style={{
                 display: "flex",
                 alignItems: "center",
                 padding: "15px 20px",
                 cursor: "pointer",
-                //Phủ màu nền 100% thay vì làm bo góc nhỏ bé như trước
                 backgroundColor: isActive ? colors.activeBg : "transparent",
                 color: isActive ? colors.textActive : colors.textNormal,
-                //Tạo vạch dọc bên trái
                 borderLeft: isActive
                   ? `4px solid ${colors.activeBorder}`
                   : "4px solid transparent",

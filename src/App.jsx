@@ -1,9 +1,10 @@
+import Dashboard from "./pages/Dashboard";
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom"; // Import công cụ Route
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import CameraList from "./components/CameraList"; // File MainContent cũ đổi tên thành CameraList
-import CameraDetail from "./components/CameraDetail"; // File mới chuẩn bị tạo
+import CameraList from "./pages/CameraList"; // File MainContent cũ đổi tên thành CameraList
+import CameraDetail from "./pages/CameraDetail"; // File mới chuẩn bị tạo
 
 function App() {
   const [activeMenu, setActiveMenu] = useState("Camera");
@@ -33,7 +34,9 @@ function App() {
           {/* Thay vì gọi cứng <MainContent />, ta dùng Routes để điều hướng */}
           <Routes>
             {/* Tự động chuyển hướng từ trang chủ vào /cameras */}
-            <Route path="/" element={<Navigate to="/cameras" replace />} />
+            {/* Đặt trang Tổng quan làm trang mặc định khi vừa vào web */}
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cameras" element={<CameraList />} />
             <Route path="/cameras/:id" element={<CameraDetail />} />
           </Routes>

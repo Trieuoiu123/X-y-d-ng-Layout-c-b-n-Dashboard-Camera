@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CameraCard from "./CameraCard"; // Import component thẻ Camera
+import CameraCard from "../components/CameraCard";
 import camerasData from "../data/cameras.json"; // Import dữ liệu giả (kiểm tra lại đường dẫn nếu file của bạn để chỗ khác)
 
 function MainContent() {
